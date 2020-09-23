@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix'=>'v1','middleware' => 'throttle:60,5'],function (){
    Route::post('auth',[AuthController::class, 'issueToken']) ;
+   Route::
+//   middleware('auth:api')->
+   get('/weather/{city}', [WeatherController::class, 'getWeather']);
 });
 
 
