@@ -22,7 +22,6 @@ class AuthController extends AccessTokenController
             $token = $tokenResponse->getContent();
             $data = json_decode($token, true);
             $message=__('messages.operation_successful');
-            $status_code=200;
         }
         catch (\Exception $e){
             Log::error($e);
